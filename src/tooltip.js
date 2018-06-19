@@ -85,8 +85,9 @@ class Tooltip extends Component {
     const { place, offset } = this.state;
     const content = this.children();
     const visibility = (origin && show) ? 'visible' : 'hidden';
+    const opacity = (origin && show) ? 1 : 0;
     const style = {
-      base: { ...styles.base, ...themes.simple.base, visibility, ...offset },
+      base: { ...styles.base, ...themes.simple.base, visibility, opacity, ...offset },
       content: { ...styles.content, ...themes.simple.content },
       arrow: { ...styles.arrow },
       border: { ...themes.simple.border, ...styles.border.base, ...styles.border[place],  },
