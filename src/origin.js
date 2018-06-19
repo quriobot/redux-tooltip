@@ -108,13 +108,13 @@ class Origin extends Component {
     const WrappedComponent = this.props.component;
 
     if (typeof WrappedComponent == 'function') {
-      return <WrappedComponent onMouseEnter={props.onMouseEnter} onMouseLeave={props.onMouseLeave} ref='wrapper'>
+      return <WrappedComponent onMouseEnter={props.onMouseEnter} onMouseLeave={props.onMouseLeave} ref={el => this.wrapper = el}>
         {props.children}
       </WrappedComponent>
     }
 
     return React.createElement(this.props.tagName, {
-      ...props, ref: 'wrapper'
+      ...props, ref: this.wrapper
     });
   }
 }

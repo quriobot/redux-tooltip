@@ -36,8 +36,8 @@
     "dompurify": "^0.8.4",
     "is-dom": "^1.0.5",
     "prop-types": "^15.6.0",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0"
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1"
   },
   "devDependencies": {
     "babel-cli": "^6.18.0",

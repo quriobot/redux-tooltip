@@ -6,9 +6,9 @@ export const simple = {
     color: '#2c2c2c',
   },
   content: {
-    fontSize: '14px',
-    lineHeight: '16px',
-    padding: '8px 10px',
+    fontSize: '12px',
+    lineHeight: '14px',
+    padding: '4px 10px',
   },
   border: {
     borderColor: 'white',
