@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
-import { sanitize } from 'dompurify';
+import Parser from "html-react-parser";
 import { adjust, resolve, originOrEl } from './utils';
 import * as styles from './styles';
 import * as themes from './themes';
@@ -74,7 +74,7 @@ class Tooltip extends Component {
   children(props = this.props) {
     let { content } = props;
     if (typeof content === 'string') {
-      content = <div dangerouslySetInnerHTML={{ __html: sanitize(content) }} />;
+      content = Parser(content);
     }
     return content ? content : props.children;
   }
