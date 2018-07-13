@@ -82,7 +82,6 @@ class Tooltip extends Component {
 
   render () {
     const { id, className, show, onHover, onLeave, maxWidth } = this.props;
-    console.log("tooltip props", this.props);
     const origin = originOrEl(this.props);
     const { place, offset } = this.state;
     const content = this.children();
