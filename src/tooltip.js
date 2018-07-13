@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
-import Parser from "html-react-parser";
+import Parser from 'html-react-parser';
+
 import { adjust, resolve, originOrEl } from './utils';
 import * as styles from './styles';
 import * as themes from './themes';
