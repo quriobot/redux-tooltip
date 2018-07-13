@@ -15,6 +15,7 @@ export const TOGGLE = prefix('TOGGLE');
 export const KEEP = prefix('KEEP');
 export const CONTENT = prefix('CONTENT');
 export const PLACE = prefix('PLACE');
+export const MAX_WIDTH = prefix('MAX_WIDTH');
 
 export const show = createAction(SHOW);
 export const hide = createAction(HIDE);
@@ -22,6 +23,7 @@ export const toggle = createAction(TOGGLE);
 export const keep = createAction(KEEP);
 export const content = createAction(CONTENT);
 export const place = createAction(PLACE);
+export const maxWidth = createAction(MAX_WIDTH);
 
 export const DELAY = prefix('DELAY');
 const DURATION = 1500;

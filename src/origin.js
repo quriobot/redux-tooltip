@@ -36,7 +36,8 @@ class Origin extends Component {
       onMouseEnter: PropTypes.func,
       onMouseLeave: PropTypes.func,
       onHover: PropTypes.func,
-      onLeave: PropTypes.func
+      onLeave: PropTypes.func,
+      maxWidth: PropTypes.string,
     };
   }
 
@@ -44,6 +45,7 @@ class Origin extends Component {
     return {
       delayOn: 'hide',
       tagName: 'span',
+      maxWidth: 'none',
     };
   }
 
@@ -81,7 +83,7 @@ class Origin extends Component {
   }
 
   render() {
-    const props = blacklist(this.props, 'name', 'content', 'place', 'tagName', 'delay', 'delayOn', 'dispatch', 'onTimeout', 'onHover', 'onLeave');
+    const props = blacklist(this.props, 'name', 'content', 'place', 'maxWidth', 'tagName', 'delay', 'delayOn', 'dispatch', 'onTimeout', 'onHover', 'onLeave');
 
     if (!props.onMouseEnter) {
       props.onMouseEnter = e => {

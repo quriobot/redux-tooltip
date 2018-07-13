@@ -3,7 +3,7 @@ import { resolve, deprecatedWarning } from './utils';
 import {
   SHOW, HIDE, TOGGLE, KEEP,
   CONTENT, PLACE,
-  START_TIMEOUT, END_TIMEOUT
+  START_TIMEOUT, END_TIMEOUT, MAX_WIDTH
 } from './actions';
 
 const initial = {
@@ -14,9 +14,10 @@ const initial = {
   auto: true,
   content: null,
   timeout: null,
+  maxWidth: 'none',
 };
 
-const SHOW_PROPS = ['origin', 'el', 'place', 'content'];
+const SHOW_PROPS = ['origin', 'el', 'place', 'content', 'maxWidth'];
 
 const handlers = {
   [SHOW]: function (state, action) {
@@ -50,6 +51,9 @@ const handlers = {
   },
   [END_TIMEOUT]: function (state) {
     return { ...state, timeout: null };
+  },
+  [MAX_WIDTH]: function (state) {
+    return { ...state, maxWidth: action.payload };
   },
 };
 

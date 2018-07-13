@@ -29,7 +29,7 @@ class App extends Component {
         <p>
           <svg width="240" height="70">
             <g transform="translate(40, 10)">
-              <SVGOrigin className="red" content="Red">
+              <SVGOrigin maxWidth="300px" className="red" content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam laborum consequatur provident, nulla quos, maiores ex illo qui rem vero adipisci similique laudantium recusandae officiis aliquid, dolor iste? Magnam, cupiditate!">
                 <rect fill="red" x="0" y="0" width="50" height="50" />
               </SVGOrigin>
               <SVGOrigin className="green" content="Green">
@@ -52,7 +52,7 @@ class App extends Component {
         <h2>Moving Tooltip</h2>
         <div
           className="moving"
-          style={{ width: '260px', height: '120px', backgroundColor: 'lightgray' }} 
+          style={{ width: '260px', height: '120px', backgroundColor: 'lightgray' }}
           onMouseMove={this.handleMove}
           onMouseLeave={this.handleLeave}
         />

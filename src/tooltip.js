@@ -37,6 +37,7 @@ class Tooltip extends Component {
       className: PropTypes.string,
       onHover: PropTypes.func,
       onLeave: PropTypes.func,
+      maxWidth: PropTypes.string,
     };
   }
 
@@ -80,7 +81,8 @@ class Tooltip extends Component {
   }
 
   render () {
-    const { id, className, show, onHover, onLeave } = this.props;
+    const { id, className, show, onHover, onLeave, maxWidth } = this.props;
+    console.log("tooltip props", this.props);
     const origin = originOrEl(this.props);
     const { place, offset } = this.state;
     const content = this.children();
@@ -92,7 +94,7 @@ class Tooltip extends Component {
       arrow: { ...styles.arrow },
       border: { ...themes.simple.border, ...styles.border.base, ...styles.border[place],  },
     };
-    style.shadow = { ...style.content, visibility: 'hidden', position: 'absolute' };
+    style.shadow = { ...style.content, visibility: 'hidden', position: 'absolute', maxWidth: maxWidth };
 
     return (
       <div className={`${className}-wrapper`}>
