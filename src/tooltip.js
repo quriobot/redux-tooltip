@@ -47,6 +47,7 @@ class Tooltip extends Component {
       show: false,
       place: 'top',
       auto: true,
+      className: 'redux-tooltip'
     };
   }
 
@@ -84,10 +85,11 @@ class Tooltip extends Component {
   render () {
     const { id, className, show, onHover, onLeave, maxWidth } = this.props;
     const origin = originOrEl(this.props);
-    const { place, offset } = this.state;
+    const { place } = this.state;
     const content = this.children();
     const visibility = (origin && show) ? 'visible' : 'hidden';
     const opacity = (origin && show) ? 1 : 0;
+    const offset = show ? this.state.offset : {...this.state.offset, left: 0, top: 0};
     const style = {
       base: { ...styles.base, ...themes.simple.base, visibility, opacity, ...offset },
       content: { ...styles.content, ...themes.simple.content },
@@ -102,7 +104,7 @@ class Tooltip extends Component {
           ref={el => this.tooltip = el}
           style={style.base}
           id={id}
-          className={className}
+          className={`${className} ${show ? `${className}_visible` : ""}`}
           onMouseEnter={onHover}
           onMouseLeave={onLeave}
         >
